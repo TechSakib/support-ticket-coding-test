@@ -11,82 +11,104 @@
 
 This is a Laravel-based support ticket system. Follow the instructions below to set up the project on your local environment.
 
-## Author Information
-# MD. SAKIB HOSSAIN
-#### Email: [techsakib00@gmail.com](mailto:techsakib00@gmail.com)
-#### Mobile: +8801869680796
+### Features Implemented:
 
-## Prerequisites
+- [x] **User Roles:** Implemented two types of users: `Admin` and `Customer`.
+- [x] **Ticket Creation:** Customers can open tickets to submit their issues.
+- [x] **Ticket Visibility:** Tickets are visible in both Admin and Customer panels.
+- [x] **Email Notification (Admin):** Admin receives an email notification when a new ticket is opened.
+- [x] **Admin Response:** Admin can respond to the ticket through the system.
+- [x] **Ticket Closure:** Admin can close the ticket, and customers receive an email notification regarding the closure.
+- [x] **Further Issues:** Customers can reopen a ticket by creating a new one for any additional issues.
 
-Ensure you have the following installed on your system:
-- PHP 8.x
-- Composer
-- Node.js & npm
-- MySQL
+**Admin Credentials**
+> email : `admin@example.com`  
+> pass : `admin`
+
+_**Note:**_ You can change these credentials in the `.env` file by modifying the following environment variables **before running the seeder**:
+```env
+ADMIN_EMAIL_FOR_SEEDER=
+ADMIN_PASSWORD_FOR_SEEDER=
+```
 
 ## Setup Guide
 
 ### 1. Clone the Repository
-  
-`git clone -b sakib-hossain-01869680796 https://github.com/netcodengit/support-ticket-coding-test.git`  
-  
+
+`git clone -b sakib-hossain-01869680796 https://github.com/netcodengit/support-ticket-coding-test.git`
+
 `cd support-ticket-coding-test`
 
 ### 2. Install PHP Dependencies
-Use Composer to install the required PHP dependencies:  
-  
+Use Composer to install the required PHP dependencies:
+
 `composer install`
 
 ### 3. Install JavaScript Dependencies
-Install the required npm packages and build the front-end assets:  
-  
+Install the required npm packages and build the front-end assets:
+
 `npm install`  
 `npm run build`
 
 ### 4. Copy Environment Configuration
-Create a copy of the example environment file:  
+Create a copy of the example environment file:
 
 `cp .env.example .env`
 
 ### 5. Generate Application Key
 Run the following command to generate an application encryption key:
-  
+
 `php artisan key:generate`
 
 ### 6. Configure the Environment File
 Open the `.env` file and configure your database settings:
 
-DB_CONNECTION  
-DB_HOST  
-DB_PORT  
-DB_DATABASE  
-DB_USERNAME  
-DB_PASSWORD  
+```env
+DB_CONNECTION=
+DB_HOST=
+DB_PORT=
+DB_DATABASE=
+DB_USERNAME=
+DB_PASSWORD=
+```
 
 #### You also need to add default admin data for seeding:
-
-ADMIN_EMAIL_FOR_SEEDER  
-ADMIN_PASSWORD_FOR_SEEDER  
+```env
+ADMIN_EMAIL_FOR_SEEDER=
+ADMIN_PASSWORD_FOR_SEEDER=
+```
 
 #### You also need to add email configuration:
-MAIL_MAILER  
-MAIL_HOST  
-MAIL_PORT  
-MAIL_USERNAME  
-MAIL_PASSWORD  
-MAIL_ENCRYPTION  
-MAIL_FROM_ADDRESS  
-MAIL_FROM_NAME  
+```env
+MAIL_MAILER=
+MAIL_HOST=
+MAIL_PORT=
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_ENCRYPTION=
+MAIL_FROM_ADDRESS=
+MAIL_FROM_NAME=
+```
 
 ### 7. Run Migrations and Seed Database
-Run the following command to migrate the database and seed default data:  
-  
+Run the following command to migrate the database and seed default data:
+
 `php artisan migrate --seed`
 
 ### 8. Serve the Application
-Start the development server:  
+Start the development server:
 
 `php artisan serve`
+
+<details><summary>Developer Information</summary>
+<p>
+<h2>MD. SAKIB HOSSAIN</h2>
+<strong>Email: </strong> <a href="mailto:techsakib00@gmail.com">techsakib00@gmail.com</a>
+<br/>
+<strong>Mobile: </strong> +8801869680796
+</p>
+</details> 
+
   
 ## About Laravel
 
