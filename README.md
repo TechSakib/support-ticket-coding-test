@@ -35,7 +35,7 @@ ADMIN_PASSWORD_FOR_SEEDER=
 
 ### 1. Clone the Repository
 
-`git clone -b sakib-hossain-01869680796 https://github.com/netcodengit/support-ticket-coding-test.git`
+`git clone -b sakib-hossain-01869680796 https://github.com/TechSakib/support-ticket-coding-test.git`
 
 `cd support-ticket-coding-test`
 
