@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Dhaka',
 
     /*
     |--------------------------------------------------------------------------
@@ -185,4 +185,10 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+
+    'logo'      => 'default/logo.png',
+    'favicon'   => 'default/favicon.png',
+
+    'admin_email_for_seeder'    => env('ADMIN_EMAIL_FOR_SEEDER', 'admin@example.com'),
+    'admin_password_for_seeder' => env('ADMIN_PASSWORD_FOR_SEEDER', 'admin'),
 ];

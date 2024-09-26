@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -17,11 +18,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    protected $guarded = ['id'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -42,4 +39,29 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    protected $appends = ['is_admin', 'is_customer'];
+
+    const TYPE_ADMIN = 'admin';
+    const TYPE_CUSTOMER = 'customer';
+
+    public function getIsAdminAttribute(): bool
+    {
+        return $this->type == self::TYPE_ADMIN;
+    }
+
+    public function getIsCustomerAttribute(): bool
+    {
+        return $this->type == self::TYPE_CUSTOMER;
+    }
+
+    public function scopeAdmin($query)
+    {
+        return $query->where('type', self::TYPE_ADMIN);
+    }
+
+    public function tickets(): HasMany
+    {
+        return $this->hasMany(Ticket::class);
+    }
 }
